@@ -1,0 +1,128 @@
+#sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+    height:100%;
+    width:300px;
+    background-color:#D1C2B2;
+    /*background-image:url('{image:Sidebar BG}');*/
+    /*background-position:{text:Sidebar BG Position};*/
+    background-size:cover;            
+}
+
+#sidebar2{
+    position:fixed;
+    top:0;
+    right:0;
+    height:100%;
+    width:300px;
+    background-color:#D1C2B2;
+    /*background-image:url('{image:Sidebar BG}');*/
+    /*background-position:{text:Sidebar BG Position};*/
+    background-size:cover;            
+}
+
+
+.container{
+
+}
+
+#home {
+    margin:40px auto 30px auto;
+    text-align: center;
+}
+
+body {
+    margin-left:375px;
+    margin-top: 50px;
+    background-color: #F5F0E6;
+    font-family: "Calibri", sans-serif;
+    background-image:url('/css/bg.png');
+    background-size: 1366px 768px;
+    background-attachment: fixed;
+}
+
+a {
+    text-decoration: none;
+    color:white;
+}
+
+.outchoices {
+    width:125px;
+    margin:20px auto;  
+}
+.inchoices {    
+    padding:10px 20px;    
+    text-align: center;    
+    font-size: 1.2em;    
+    background-color: #94704D;
+    transition-duration:0.2s;
+    
+}
+.inchoices:hover{
+    background-color: #754719;
+}
+
+.product-box-out{    
+    margin-bottom: 30px;
+    width:70%;    
+}
+.product-box-in{
+    text-align: left;
+    background-color: #94704D;
+    padding: 15px;
+}
+.product-box-in:hover{
+    background-color: #754719;
+}
+
+.no-stock{
+    text-align: left;
+    background-color: #ccc;
+    padding: 15px;
+    color: white;
+}
+
+td{
+    width: 200px;
+    padding-left: 15px;
+}
+
+.choice-block {
+    width:20%;
+}
+
+#logo{
+    font-family:'century gothic'; 
+    font-size: 230px;
+    letter-spacing: -50px;
+    margin-left: 25px;
+    transition-duration: 0.2s;
+}
+#logo:hover{
+    letter-spacing: -20px;
+    margin-left: 13px;
+}
+
+#tagline{
+    color: white;
+    text-align: center;
+    margin-top: -50px;
+    margin-bottom: -20px;
+}
+
+#thing{
+    color: #754719;
+}
+
+#banner{
+    font-family: "Calibri";
+    font-size:4em;
+    letter-spacing: -1px;
+    margin-top: -40px;
+}
+
+.initial{
+    font-size: 1.3em;
+    font-family: "Century Gothic";
+}

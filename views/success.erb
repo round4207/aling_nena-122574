@@ -14,6 +14,9 @@
     <link href="/css/bootstrap.css" rel="stylesheet">
 
     <link href="/css/admin.css" rel="stylesheet">-->
+    <link href="/css/alingnena.css" rel="stylesheet">
+    <link rel="shortcut icon" href="logo.png">
+
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -24,14 +27,11 @@
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/">Aling Nena</a>
-          <a class="navbar-brand-text" href="/about">About</a>
-          <a class="navbar-brand-text" href="/products">Products</a>
-        </div>
-      </div>
+    <div id="sidebar" role="navigation">      
+          <div id="logo"><a href="/">an</a></div>
+          <div id="tagline">Aling Nena's Online Superstore</div><br>
+          <div class="outchoices"><a href="/about"><div class="inchoices">About</div></a></div>
+          <div class="outchoices"><a href="/products"><div class="inchoices">Products</div></a></div>        
     </div>
 
     <div class="container">
@@ -42,14 +42,14 @@
           You bought <%= params[:quantity] %> unit(s) of <%= @product.name %> at Php <%= @product.price %> each. <br>
           Your total stands at Php <%= @cost %>, and you gave Php <%= @calc.received%>. 
           <br>
-          Your change is:
+          Your change is: <br>
           <!--THIS GOES IN THE ERB
           #DUN FIRGIT T SHOA TOE-TALL PAYMENT (@calc.received)-->
           <%@change_list = [:thousands, :five_hundreds, :hundreds, :fifties, :twenties, :tens, :fives, :ones]%>
           <%@change_grammar = {:thousands => "thousand peso bill/s", :five_hundreds => "five hundred peso bill/s", :hundreds => "hundred peso bill/s", :fifties => "fifty peso bill/s", :twenties => "twenty peso bill/s", :tens => "ten peso coin/s", :fives => "five peso coin/s", :ones => "one peso coin/s"}%>          
           <% @change_list.each do |x| %>
             <%if @calc.change(@cost)[x] != 0%>
-              <%= "#{@calc.change(@cost)[x]} #{@change_grammar[x]} " %>
+              <%= "#{@calc.change(@cost)[x]} #{@change_grammar[x]} " %> <br>
             <%end%>
           <%end%>
         <br>
