@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Aling Nena's Online Superstore</title>
+
+    <!-- Bootstrap core CSS-->
+    <link href="alingnena.css" rel="stylesheet">
+
+    <link href="/css/admin.css" rel="stylesheet">
+    <!--<link href="alingnena.css" rel="stylesheet">
+    <link rel="shortcut icon" href="logo.png">-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div id="sidebar" role="navigation">      
+          <div id="logo"><a href="/">an</a></div>
+          <div id="tagline">Aling Nena's Online Superstore</div><br>
+          <div class="outchoices"><a href="/about"><div class="inchoices">About</div></a></div>
+          <div class="outchoices"><a href="/products"><div class="inchoices">Products</div></a></div>        
+    </div>
+
+    <div class="container">
+
+      <div class="admin">
+        <h1><%= @product.new_record? ? "Create New Product" : "Purchase #{@product.name} @ #{@product.price} each (#{@product.quantity} left)" %></h1>
+        <form role="form" method="POST" action="<%= @product.new_record? ? '/create_product' : "/results/#{@product.id}" %>">
+          <form class="form-horizontal" role="form">           
+            <div class="form-group">
+              <label for="quantity" class="col-sm-2 control-label">Quantity</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="quantity" placeholder="Enter quantity of product" value="<%= @product.new_record? ? '' : @product.quantity %>">
+              </div>
+            </div>
+            Thousands: <input type="number" name="thousands"><br>
+            Five Hundreds: <input type="number" name="five_hundreds"><br>
+            Hundreds: <input type="number" name="hundreds"><br>
+            Fifties: <input type="number" name="fifties"><br>
+            Twenties: <input type="number" name="twenties"><br>
+            Tens: <input type="number" name="tens"><br>
+            Fives: <input type="number" name="fives"><br>
+            Ones: <input type="number" name="ones"><br>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default btn-primary"><%= @product.new_record? ? "Create New Product" : "Purchase #{@product.name}" %></button>
+                <a href="/products" class="btn btn-default">Back to Product List</a>
+              </div>
+            </div>
+          </form>
+
+      </div>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>

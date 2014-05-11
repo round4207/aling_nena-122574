@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Aling Nena's Online Superstore</title>
+
+    <!-- Bootstrap core CSS
+    <link href="/css/bootstrap.css" rel="stylesheet">
+
+    <link href="/css/admin.css" rel="stylesheet">-->
+    <link href="alingnena.css" rel="stylesheet">
+    <link rel="shortcut icon" href="logo.png">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div id="sidebar" role="navigation">      
+          <div id="logo"><a href="/">an</a></div>
+          <div id="tagline">Aling Nena's Online Superstore</div><br>
+          <div class="outchoices"><a href="/about"><div class="inchoices">About</div></a></div>
+          <div class="outchoices"><a href="/products"><div class="inchoices">Products</div></a></div>        
+    </div>
+    
+        <div id="banner"><span class="initial">a</span>ling <span class="initial">n</span>ena's <span class="initial">o</span>nline <span class="initial">s</span>uperstore </div>Take a look at our featured products, or 
+        <a href="/products"><span id="thing">view all our available products!</span></a> <br> <br>
+        <% @display.each do |product| %>  
+            <div class="product-box-out">
+            <% if product.quantity != 0 %>       
+              <a href="/purchase/<%= product.id %>">
+                <div class="product-box-in">
+                  <table>
+                    <tr>
+                      <td><%= product.name %></td>                    
+                      <td>Php <%= product.price %></td>
+                      <td><%= product.quantity %> left in stock</td>
+                    </tr>
+                  </table>
+                </div>
+              </a>
+            <% else %>
+              <div class="no-stock">
+                  <table>
+                    <tr>
+                      <td><%= product.name %></td>                    
+                      <td>Php <%= product.price %></td>
+                      <td style="color:red">Out of stock!</td>
+                    </tr>
+                  </table>
+                </div>              
+            <% end %>   
+            </div>
+          <% end %>                
+
+    
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
